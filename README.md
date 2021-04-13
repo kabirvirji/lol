@@ -36,3 +36,7 @@ Another thing I would do is decrease latency using a cache. I noticed I was maki
 
 One last thing worth mentioning is writing unit tests. Both for the backend and frontend. Ideally, we would write our tests first :)
 
+> Justifying the service worker 
+
+The service worker wasn't needed for this specific application, since it was a small test app (also the service worker is only enabled after running `npm build`). However, if this were a large scale production application, the service worker would be ideal since it improves the latency using caching. Additionally, it helps if you have a wide array of users with varying network connections. Having the service worker as a "middle man" helps with a lot of things out of box such as app stability. 
+
