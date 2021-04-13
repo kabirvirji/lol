@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "client-install": "cd client && yarn install",
+    "server-install": "cd server && npm install",
     "client": "cd client && yarn start",
     "server": "cd server && nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "build": "cd client && react-scripts build",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm run client-install && npm run server-install && install --only=dev --no-shrinkwrap && npm run build"
   },
   "repository": {
     "type": "git",
