@@ -9,9 +9,10 @@
     "server-install": "cd server && npm install",
     "client": "cd client && yarn start",
     "server": "cd server && nodemon server.js",
-    "build": "cd client && react-scripts build",
+    "build-client": "cd client && react-scripts build",
+    "build": "npm run build-client",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "npm run client-install && npm run server-install && install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "npm run client-install && npm run server-install && npm build"
   },
   "repository": {
     "type": "git",
